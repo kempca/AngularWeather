@@ -1,0 +1,10 @@
+<form ng-submit="submit()">
+    <input type="text" placeholder="Search city or zip" ng-model="searchProp"/>
+    <input type="submit" value="Search" class="btn btn-primary"/>
+    <div ng-show="results">
+        <p>Current Conditions for {{currentConditions.display_location.city}}</p>
+        <p>Temperature:  {{currentConditions.temp_f}}</p>
+        <p>Windchill:  {{currentConditions.windchill_f}}</p>
+        <p>Wind:  {{currentConditions.wind_mph}}</p>
+    </div>
+</form>
