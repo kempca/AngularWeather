@@ -1,11 +1,13 @@
-<form ng-submit="submit()">
-    <input type="text" placeholder="Search city or zip" ng-model="searchProp"/>
-    <input type="submit" value="Search" class="btn btn-primary"/>
-</form>
+
+<input type="text" placeholder="Search city or zip" ng-model="searchProp" name="zip"/>
+<a href="#/cityView/{{searchProp}}"><input type="button" value="Search" class="btn btn-primary"/></a>
+
 
 <div ng-repeat="city in favoriteCities" class="currentConditions">
-    <p>Current Conditions for {{city.currentConditions.display_location.city}}</p>
-    <p>Temperature:  {{city.currentConditions.temp_f}}</p>
-    <p>Windchill:  {{city.currentConditions.windchill_f}}</p>
-    <p>Wind:  {{city.currentConditions.wind_mph}}</p>
+    <a href="#/cityView/{{city.currentConditions.display_location.zip}}">
+        <p>Current Conditions for {{city.currentConditions.display_location.city}}</p>
+        <p>Temperature:  {{city.currentConditions.temp_f}}</p>
+        <p>Windchill:  {{city.currentConditions.windchill_f}}</p>
+        <p>Wind:  {{city.currentConditions.wind_mph}}</p>
+    </a>
 </div>
